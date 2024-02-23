@@ -38,8 +38,10 @@ const Start = ({ navigation }) => {
               placeholderTextColor="#757083"
             />
           </View>
-          
-          <Text style={styles.backGroundColorTxt}>Choose Background Color:</Text>
+
+          <Text style={styles.backGroundColorTxt}>
+            Choose Background Color:
+          </Text>
 
           <View style={styles.colorButtonsContainer}>
             <TouchableOpacity
@@ -82,15 +84,23 @@ const Start = ({ navigation }) => {
               ]}
               onPress={() => handleColorSelection("#B9C6AE")}
             />
-            </View>
-            
-            <Button
-              title="Start Chatting"
-              onPress={() => navigation.navigate("Chat", { name: name })}
-              style={styles.buttonStartChatting}
-              color="#757083"
-            />            
-          
+          </View>
+
+          {/* <Button
+            title="Start Chatting"
+            onPress={() => navigation.navigate("Chat", { name: name })}
+            style={styles.buttonStartChatting}
+            color="#757083"
+          /> */}
+
+          <TouchableOpacity
+            accessibilityLabel="Start Chatting"
+            accessibilityRole="button"
+            style={styles.buttonStartChatting}
+            onPress={() => navigation.navigate("Chat", { name: name })}
+          >
+            <Text style={styles.buttonText}>Start Chatting</Text>
+          </TouchableOpacity>
         </View>
       </ImageBackground>
     </View>
@@ -117,13 +127,13 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
   },
   whiteContainer: {
-    width: '88%',
-    height: '44%',
-    justifyContent: 'center',
-    backgroundColor: 'white',
+    width: "88%",
+    height: "44%",
+    justifyContent: "center",
+    backgroundColor: "white",
     bottom: 0,
-    alignItems: 'center',
-    marginBottom: '6%',
+    alignItems: "center",
+    marginBottom: "6%",
   },
   inputContainer: {
     flexDirection: "row",
@@ -156,22 +166,29 @@ const styles = StyleSheet.create({
     opacity: 1,
   },
   colorButtonsContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexDirection: "row",
+    justifyContent: "space-between",
     margin: 20,
   },
-  colorButton: {    
-      width: 40,
-      height: 40,
-      borderRadius: 20,
-      margin: 10,    
+  colorButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    margin: 10,
   },
   buttonStartChatting: {
-    backgroundColor: '#757083',
+    width: '88%',
+    alignItems: 'center',
+    backgroundColor: "#757083",
     borderRadius: 8,
     paddingVertical: 10,
     paddingHorizontal: 20,
     marginTop: 10,
+  },
+  buttonText: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: "#ffffff",
   },
 });
 
