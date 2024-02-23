@@ -38,7 +38,7 @@ const Start = ({ navigation }) => {
               placeholderTextColor="#757083"
             />
           </View>
-
+          
           <Text style={styles.backGroundColorTxt}>Choose Background Color:</Text>
 
           <View style={styles.colorButtonsContainer}>
