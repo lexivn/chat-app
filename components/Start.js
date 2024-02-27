@@ -8,6 +8,8 @@ import {
   ImageBackground,
   Image,
   TouchableOpacity,
+  Platform,
+  KeyboardAvoidingView
 } from "react-native";
 
 const Start = ({ navigation }) => {
@@ -74,7 +76,7 @@ const Start = ({ navigation }) => {
               ]}
               onPress={() => handleColorSelection("#8A95A5")}
             />
-            <TouchableOpacity
+            <TouchableOpacity            
               style={[
                 styles.colorButton,
                 {
@@ -86,14 +88,9 @@ const Start = ({ navigation }) => {
             />
           </View>
 
-          {/* <Button
-            title="Start Chatting"
-            onPress={() => navigation.navigate("Chat", { name: name })}
-            style={styles.buttonStartChatting}
-            color="#757083"
-          /> */}
-
           <TouchableOpacity
+            accessible={true}            
+            accessibilityHint="Let’s you choose to start chatting"
             accessibilityLabel="Start Chatting"
             accessibilityRole="button"
             style={styles.buttonStartChatting}
@@ -102,6 +99,7 @@ const Start = ({ navigation }) => {
             <Text style={styles.buttonText}>Start Chatting</Text>
           </TouchableOpacity>
         </View>
+        {Platform.OS === 'ios' ? <KeyboardAvoidingView behavior="padding" /> : null}
       </ImageBackground>
     </View>
   );
@@ -145,7 +143,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
     marginTop: -10,
     marginBottom: 10,
-    opacity: "50%",
+    opacity: 0.5,
   },
   icon: {
     width: 20,
