@@ -11,6 +11,7 @@ import {
   Platform,
   KeyboardAvoidingView
 } from "react-native";
+import { getAuth, signInAnonymously } from "firebase/auth";
 
 const Start = ({ navigation }) => {
   const image = require("../img/BackgroundImage.png");
@@ -23,6 +24,21 @@ const Start = ({ navigation }) => {
   const handleColorSelection = (color) => {
     setSelectedColor(color);
   };
+
+    // Initialize the Firebase authentication handle
+    const auth = getAuth();
+
+     // Allows the user to sign in anonymously
+  const signInUser = () => {
+    signInAnonymously(auth)
+      .then(result => {
+        navigation.navigate("Chat", {name: name, userID: result.user.uid, selectedColor: selectedColor });
+        Alert.alert("Signed in Successfully!");
+      })
+      .catch((error) => {
+        Alert.alert("Unable to sign in, try later again.");
+      })
+  }
 
   return (
     <View style={styles.container}>
@@ -94,7 +110,8 @@ const Start = ({ navigation }) => {
             accessibilityLabel="Start Chatting"
             accessibilityRole="button"
             style={styles.buttonStartChatting}
-            onPress={() => navigation.navigate("Chat", { name: name })}
+            // onPress={() => navigation.navigate("Chat", { name: name })}
+            onPress={signInUser}
           >
             <Text style={styles.buttonText}>Start Chatting</Text>
           </TouchableOpacity>
