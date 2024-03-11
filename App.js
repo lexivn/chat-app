@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useContext, useEffect } from "react";
 import { StyleSheet, Text, View, LogBox, Alert } from "react-native";
+LogBox.ignoreLogs(["@firebus/auth: Auth (10.3.1)", ])
 // import the screens
 import Start from "./components/Start";
 import Chat from "./components/Chat";
