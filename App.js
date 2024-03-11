@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { useContext, useEffect } from "react";
 import { StyleSheet, Text, View, LogBox, Alert } from "react-native";
 LogBox.ignoreLogs(["@firebus/auth: Auth (10.3.1)", ])
+
 // import the screens
 import Start from "./components/Start";
 import Chat from "./components/Chat";
@@ -9,6 +10,10 @@ import Chat from "./components/Chat";
 // import react Navigation
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+// Avoid a warning stating "AsyncStorage"
+// import { LogBox } from 'react-native';
+LogBox.ignoreLogs(["AsyncStorage has been extracted from", "firebase/auth"]);
 
 // Create the navigator
 const Stack = createNativeStackNavigator();
