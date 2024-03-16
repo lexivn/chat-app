@@ -12,7 +12,6 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // Avoid a warning stating "AsyncStorage"
-// import { LogBox } from 'react-native';
 LogBox.ignoreLogs(["AsyncStorage has been extracted from", "firebase/auth"]);
 
 // Create the navigator
@@ -27,6 +26,7 @@ import {
   disableNetwork,
   enableNetwork,
 } from "firebase/firestore";
+// To upload the blob into Firebase Storage
 import { getStorage } from "firebase/storage";
 import { useNetInfo } from "@react-native-community/netinfo";
 
@@ -45,8 +45,11 @@ const App = () => {
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const storage = getStorage(app); // Review
+  // Initialize the storage handle
+  // To create a reference, get an instance of the Storage service using getStorage()
+  const storage = getStorage(app);
 
+  
   // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
 
@@ -73,6 +76,7 @@ const App = () => {
             <Chat
               isConnected={connectionStatus.isConnected}
               db={db}
+              storage={storage}
               {...props}
             />
           )}
