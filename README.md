@@ -1,85 +1,96 @@
-### Objective
+## Chat App
 
-To build a chat app for mobile devices using React Native. The app will
-provide users with a chat interface and options to share images and their
-location.
+The chat app is for mobile devices using React Native. The app will provide users with a chat interface and options to chat, share images and their location.
 
-### The 5 Ws
+## User Stories
 
-1. Who—The users of the mobile chat app. These could be friends, family or other
-   students on this course. Your codebase will be used by other developers working on
-   the product.
-2. What—A native chat app built with React Native, as well as all the relevant
-   documentation.
-3. When—Whenever users of your chat app want to communicate with each other.
-4. Where—The app will be optimized for both Android and iOS devices. You will use
-   Expo to develop the app and Google Firestore to store the chat messages.
-5. Why—Mobile chat apps are among the most commonly downloaded and used apps
-   in the world, so knowing how to build a chat app is an indispensable skill. The app
-   will demonstrate your React Native development skills.
+● As a new user, I want to be able to easily enter a chat room so I can quickly start talking to my
+friends and family.
 
-### User Stories
+● As a user, I want to be able to send messages to my friends and family members to exchange
+the latest news.
 
-> As a new user, I want to be able to easily enter a chat room so I can quickly start talking to my
-> friends and family.
+● As a user, I want to send images to my friends to show them what I’m currently doing.
 
-> As a user, I want to be able to send messages to my friends and family members to exchange
-> the latest news.
+● As a user, I want to share my location with my friends to show them where I am.
 
-> As a user, I want to send images to my friends to show them what I’m currently doing.
+● As a user, I want to be able to read my messages offline so I can reread conversations at any
+time.
 
-> As a user, I want to share my location with my friends to show them where I am.
+● As a user with a visual impairment, I want to use a chat app that is compatible with a screen
+reader so that I can engage with a chat interface.
 
-> As a user, I want to be able to read my messages offline so I can reread conversations at any
-> time.
+## Technology Stack
 
-> As a user with a visual impairment, I want to use a chat app that is compatible with a screen
-> reader so that I can engage with a chat interface.
+- **React Native** : Framework for building cross-platform mobile applications using JavaScript and React.
+- **Expo** : Platform that simplifies the development of universal, native-quality mobile apps using JavaScript and React Native.
+- **Google Firestore Database / Authentication / Cloud Storage** : Offers a scalable NoSQL database, authentication services, and cloud storage for building real-time.
+- **Gifted Chat library** : React Native library providing customizable UI components for creating feature-rich messaging applications.
+- **Expo ImagePicker API / Location API** : ImagePicker API enables integration of camera and photo library functionalities, while Location API allows to access GPS services for location-based features in Expo apps.
 
-### Key Features
+## Getting started
 
-- A page where users can enter their name and choose a background color for the chat screen
-  before joining the chat.
-- A page displaying the conversation, as well as an input field and submit button.
-- The chat must provide users with two additional communication features: sending images
-  and location data.
-- Data gets stored online and offline
+### 1. Make sure you have Expo CLI installed
 
-### Technical Requirements
+```
+npm install -g expo-cli
+```
 
-- The app must be written in React Native.
-- The app must be developed using Expo.
-- The app must be styled according to the given screen design.
-- Chat conversations must be stored in Google Firestore Database.
-- The app must authenticate users anonymously via Google Firebase authentication.
-- Chat conversations must be stored locally.
-- The app must let users pick and send images from the phone’s image library.
-- The app must let users take pictures with the device’s camera app, and send them.
-- The app must store images in Firebase Cloud Storage.
-- The app must be able to read the user’s location data.
-- Location data must be sent via the chat in a map view.
-- The chat interface and functionality must be created using the Gifted Chat library.
-- The app’s codebase must contain comments.
+### 2. Database configuration
 
-### How to use this App Step By Step Guide
+- Please cretae a Firebase Account & then a new project in the Firebase console: https://console.firebase.google.com/
+- Cloud Firestore DB: Initialize a new database and set its rules to: allow read, write: if **true**;
+- Firebase Authentication: Activate anonymous authentication for the app.
+- Firebase Storage: Activate storage by clicking on "Start now" and set its rules to: allow read, write: if **true**;
+- Configuration: Under the project settings, add a new app and follow the steps provided by Firebase until you obtain the configuration code.
 
-1. Clone the Repository:
-   git clone https://github.com/michaelleoniuk/ChatApp
+```
+  const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID"
+};
+```
 
-2. Install Dependencies:
+- Add this code to your main component and configure it in your app.
 
-This App uses below dependencies:
+```
+import { initializeApp } from "firebase/app";
 
-- React Native
-- Expo: Development framework for React Native
-- Firebase Storage: Storage service for Firebase
-- Firebase: Real-time database and storage services
-- React Navigation: Navigation library
-- react-native-gifted-chat: Chat UI components
-- expo-image-picker: Access to the device's image library
-- expo-location: Access to the device's location
-- expo-async-storage: Asynchronous, persistent key-value storage
+const app = initializeApp(firebaseConfig);
+```
 
-3. Configure Firebase
+### 3. Installation
 
-4. Run the App on emulator or physical device.
+#### Clone the repository:
+
+```
+git clone https://github.com/alinalein/chat.git
+```
+
+#### Change the directory:
+
+```
+cd chat
+```
+
+#### Install the dependencies
+
+```
+npm install
+```
+
+#### Run the server
+
+```
+npm start
+```
+
+#### On your emulator or the Expo Go app on your phone, click on the running link after logging in to your Expo account
+
+<img width="200" alt="image" src="https://github.com/alinalein/chat/assets/111589183/39ff7a54-eca7-4e8e-b308-330979264c84">
+
+## App User Interface
