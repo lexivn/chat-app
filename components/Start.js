@@ -69,7 +69,10 @@ const Start = ({ navigation }) => {
 
           <View style={styles.colorButtonsContainer}>
             {colors.map((color) => {
-              const colorButton = { ...styles.colorButton,backgroundColor: color };
+              const colorButton = {
+                ...styles.colorButton,
+                backgroundColor: color,
+              };
               return color == selectedColor ? (
                 <TouchableOpacity
                   style={colorButton}
@@ -91,7 +94,7 @@ const Start = ({ navigation }) => {
             accessibilityHint="Let’s you choose to start chatting"
             accessibilityLabel="Start Chatting"
             accessibilityRole="button"
-            style={styles.buttonStartChatting}            
+            style={styles.buttonStartChatting}
             onPress={signInUser}
           >
             <Text style={styles.buttonText}>Start Chatting</Text>

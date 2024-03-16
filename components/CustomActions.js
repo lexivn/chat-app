@@ -69,10 +69,10 @@ const CustomActions = ({
     const response = await fetch(imageURI);
     const blob = await response.blob();
     uploadBytes(newUploadRef, blob).then(async (snapshot) => {
-      const imageURL = await getDownloadURL(snapshot.ref)
-      onSend({ image: imageURL })
+      const imageURL = await getDownloadURL(snapshot.ref);
+      onSend({ image: imageURL });
     });
-  }
+  };
 
   // Pick an image from the Media Library
   const pickImage = async () => {
@@ -80,7 +80,7 @@ const CustomActions = ({
     if (permissions?.granted) {
       let result = await ImagePicker.launchImageLibraryAsync();
       if (!result.canceled) {
-        await uploadAndSendImage(result.assets[0].uri);        
+        await uploadAndSendImage(result.assets[0].uri);
       } else Alert.alert("Permission haven't been granted.");
     }
   };
@@ -92,7 +92,7 @@ const CustomActions = ({
       if (!result.canceled) await uploadAndSendImage(result.assets[0].uri);
       else Alert.alert("Permissions haven't been granted.");
     }
-  }
+  };
 
   // Get the user's location
   const getLocation = async () => {

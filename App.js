@@ -1,7 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import { useContext, useEffect } from "react";
-import { StyleSheet, Text, View, LogBox, Alert } from "react-native";
-LogBox.ignoreLogs(["@firebus/auth: Auth (10.3.1)", ])
+import { StyleSheet, LogBox, Alert } from "react-native";
+LogBox.ignoreLogs(["@firebus/auth: Auth (10.3.1)"]);
 
 // import the screens
 import Start from "./components/Start";
@@ -49,7 +49,6 @@ const App = () => {
   // To create a reference, get an instance of the Storage service using getStorage()
   const storage = getStorage(app);
 
-  
   // Initialize Cloud Firestore and get a reference to the service
   const db = getFirestore(app);
 
@@ -69,8 +68,7 @@ const App = () => {
       <Stack.Navigator initialRouteName="Start">
         <Stack.Screen name="Start" component={Start} />
         <Stack.Screen
-          name="Chat"
-          // component={Chat}
+          name="Chat"         
         >
           {(props) => (
             <Chat

@@ -1,12 +1,9 @@
 import { useState, useEffect } from "react";
 import {
   StyleSheet,
-  View,
-  Text,
+  View,  
   Platform,
-  KeyboardAvoidingView,
-  TouchableOpacity,
-  Alert,
+  KeyboardAvoidingView
 } from "react-native";
 import {
   collection,
