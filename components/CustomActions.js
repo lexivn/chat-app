@@ -19,7 +19,7 @@ const CustomActions = ({
   userID,
 }) => {
   const actionSheet = useActionSheet();
-  const newUploadRef = ref(storage, "image123");
+  // const newUploadRef = ref(storage, "image123");
 
   const onActionPress = () => {
     const options = [
@@ -62,6 +62,7 @@ const CustomActions = ({
     return `${userID}-${timeStamp}-${imageName}`;
   };
 
+  // Grab the Medida Library image or Camera photo and send them as message
   const uploadAndSendImage = async (imageURI) => {
     const uniqueRefString = generateReference(imageURI);
     const newUploadRef = ref(storage, uniqueRefString);
@@ -79,18 +80,7 @@ const CustomActions = ({
     if (permissions?.granted) {
       let result = await ImagePicker.launchImageLibraryAsync();
       if (!result.canceled) {
-        await uploadAndSendImage(result.assets[0].uri);
-        // const imageURI = result.assets[0].uri;
-        // const uniqueRefString = generateReference(imageURI);
-        // const response = await fetch(imageURI);
-        // const blob = await response.blob();
-        // const newUploadRef = ref(storage, uniqueRefString);
-        // uploadBytes(newUploadRef, blob).then(async (snapshot) => {
-        //   console.log("File has been uploaded successfully");
-        //   // Getting the remote URL to send the image as a message
-        //   const imageURL = await getDownloadURL(snapshot.ref);
-        //   onSend({ image: imageURL });
-        // });
+        await uploadAndSendImage(result.assets[0].uri);        
       } else Alert.alert("Permission haven't been granted.");
     }
   };
