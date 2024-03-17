@@ -91,6 +91,6 @@ npm start
 
 #### On your emulator or the Expo Go app on your phone, click on the running link after logging in to your Expo account
 
-<img width="200" alt="image" src="https://github.com/alinalein/chat/assets/111589183/39ff7a54-eca7-4e8e-b308-330979264c84">
+<img width="200" alt="image" src="https://firebasestorage.googleapis.com/v0/b/chat-app-db-649fc.appspot.com/o/undefined-1710633295300-E5243B04-5D59-4654-BEC6-371573643E56.jpg?alt=media&token=1f6ca55e-10a8-4c5b-a1bd-fa1070318e6e">
 
 ## App User Interface
