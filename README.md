@@ -91,6 +91,9 @@ npm start
 
 #### On your emulator or the Expo Go app on your phone, click on the running link after logging in to your Expo account
 
-<img width="200" alt="image" src="https://github.com/alinalein/chat/assets/111589183/39ff7a54-eca7-4e8e-b308-330979264c84">
+<img width="200" alt="image" src="D:\FULLSTACK WEB DEV\3. FullStack Immersion\Achievement 5\chat-app\assets\3162024\expo_chatApp.png">
 
 ## App User Interface
+
+![image](D:\FULLSTACK WEB DEV\3. FullStack Immersion\Achievement 5\chat-app\assets\3162024\2024031620.04.35.jpeg
+![image](D:\FULLSTACK WEB DEV\3. FullStack Immersion\Achievement 5\chat-app\assets\3162024\expo_chatApp.png\2024031620.02.35.jpeg)
