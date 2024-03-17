@@ -96,5 +96,7 @@ npm start
 ## App User Interface
 
 <img width="300" alt="image" src="https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.04.35.jpeg">
-![image](https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.04.35.jpeg)
-![image](https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.02.35.jpeg)
+<img width="300" alt="image" src="https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.02.35.jpeg">
+
+<!-- ![image](https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.04.35.jpeg)
+![image](https://github.com/lexivn/chat-app/blob/main/assets/3162024/2024031620.02.35.jpeg) -->
